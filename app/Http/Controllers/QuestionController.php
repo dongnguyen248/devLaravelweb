@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AskQuestionRequest;
 use App\Question;
-use Illuminate\Auth\Access\Gate;
+// use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class QuestionController extends Controller
 {
@@ -32,7 +33,7 @@ class QuestionController extends Controller
     public function showform()
     {
         $question = new Question();
-        return view('questions.create',compact('question'));
+        return view('questions.create', compact('question'));
     }
 
     public function create()
@@ -60,8 +61,8 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
-        
-        return view('questions.show',compact('question'));    
+
+        return view('questions.show', compact('question'));
     }
 
     /**
@@ -72,12 +73,14 @@ class QuestionController extends Controller
      */
     public function edit($id)
     {
+
         $question = Question::findOrfail($id);
-        if(Gate::denies('update-question',$question)){
-            return view('questions.edit',compact('question'));
+        if (Gate::allows('update-question', $question)) {
+
+            return view('questions.edit', compact('question'));
         }
-        abort(403,'Access denies');
-        
+        abort(403, 'Access denies');
+
     }
 
     /**
@@ -92,8 +95,8 @@ class QuestionController extends Controller
         //
         $question = Question::findOrfail($id);
 
-        $question->update($request->only('title','body'));
-        
+        $question->update($request->only('title', 'body'));
+
         return redirect()->route('allquestion')->with('success', 'Your question has been Updated');
     }
 

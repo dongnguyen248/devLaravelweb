@@ -23,7 +23,10 @@
               <div class="d-flex align-items-center">
                 <h3 class="mt-0"> {{ $question->title }}</h3>
                 <div class="ml-auto">
+                  @if(Auth::user()->can('update-question',$question))
                   <a href="{{Route('editQuestion',$question->id)}}" class="btn btn-sm btn-outline-info">Edit</a>
+                  @endif
+                  @if(Auth::user()->can('delete-question',$question))
                   <form class="formdelete" action="{{Route('delQuestion',$question->id)}}" method="post">
                     @method('DELETE')
                     @csrf
@@ -31,6 +34,7 @@
                       class="btn btn-outline-danger btn-sm">Delete</button>
 
                   </form>
+                  @endif
                 </div>
 
               </div>

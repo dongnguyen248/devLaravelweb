@@ -1,0 +1,38 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+// Variables
+@import 'variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import 'node_modules/font-awesome/scss/font-awesome';
+.counters {
+    margin-right: 30px;
+    text-align: center;
+}
+
+// .fa-star {
+//     color: #ffb000;
+// }
+.status {
+    &.unvote {
+        color: $gray;
+    }
+    &.voted {
+        color: $orange;
+    }
+    &.unansewered {
+        border: none;
+    }
+    &.answered {
+        border: 1px solid $green;
+        color: $green;
+    }
+    &.answered-accepted {
+        background-color: $green;
+        color: $white;
+    }
+}
+
+form.formdelete {
+    display: inline;
+}

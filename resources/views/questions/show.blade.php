@@ -23,6 +23,7 @@
               <div class="d-flex align-items-center">
                 <h3 class="mt-0"> {{ $question->title }}</h3>
                 <div class="ml-auto">
+                  <!-- update-question and delete-question are rules we set in AtuhServiceProvider -->
                   @if(Auth::user()->can('update-question',$question))
                   <a href="{{Route('editQuestion',$question->id)}}" class="btn btn-sm btn-outline-info">Edit</a>
                   @endif

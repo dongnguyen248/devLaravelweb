@@ -13,6 +13,10 @@ class Question extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
     //using title for slug create link. we need to set name attribute same name in blade
     public function setTitleAttribute($value)
     {
@@ -32,7 +36,7 @@ class Question extends Model
     }
     public function getStatusAttribute()
     {
-        if ($this->answers > 0) {
+        if ($this->answers_cout > 0) {
             if ($this->best_answered_id) {
                 return "answered-accepted";
             }

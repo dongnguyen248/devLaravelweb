@@ -28,7 +28,7 @@
               <p class="lead">
                 Asked by <a href="{{$question->user->url}}"> {{$question->user->name}}</a>
                 <small class="text-muted"> {{ $question->created_date }}</small>
-                <i class="fa fa-comment-o status {{ $question->status }}"> </i> <strong> {{ $question->answers }}
+                <i class="fa fa-comment-o status {{ $question->status }}"> </i> <strong> {{ $question->answers_count }}
                 </strong>
                 <i class="fa fa-star vote status {{ $question->vote }}" aria-hidden="true"></i> <strong>
                   {{ $question->votes }}</strong>

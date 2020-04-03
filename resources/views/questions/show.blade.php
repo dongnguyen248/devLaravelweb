@@ -41,6 +41,17 @@
               </div>
               <div class="content">
                 <p>{{ $question->body}}</p>
+                <div class="float-right">
+                  <span class="text-muted">Ansered {{$question->created_date}}</span>
+                  <div class="media mt-2">
+                    <a href="{{$question->user->url}}" class="pr-2">
+                      <img src="{{$question->user->avatar}}" alt="avatar user">
+                    </a>
+                    <div class="media-body mt-1">
+                      <a href="{{$question->user->url}}">{{$question->user->name}}</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -60,11 +71,11 @@
               {{ $answer->body }}
               <div class="float-right">
                 <span class="text-muted">Ansered {{$answer->created_date}}</span>
-                <div class="media">
+                <div class="media mt-2">
                   <a href="{{$answer->user->url}}" class="pr-2">
-                    <img src="{{$answer->user->avarta}}" alt="avarta user">
+                    <img src="{{$answer->user->avatar}}" alt="avatar user">
                   </a>
-                  <div class="media-body">
+                  <div class="media-body mt-1">
                     <a href="{{$answer->user->url}}">{{$answer->user->name}}</a>
                   </div>
                 </div>

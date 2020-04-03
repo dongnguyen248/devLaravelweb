@@ -4,7 +4,6 @@
 @import 'variables';
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-@import 'node_modules/font-awesome/scss/font-awesome';
 .counters {
     margin-right: 30px;
     text-align: center;
@@ -35,4 +34,15 @@
 
 form.formdelete {
     display: inline;
+}
+
+.vote-controls {
+    min-width: 60px;
+    margin-right: 30px;
+    text-align: center;
+    color: $gray-700;
+    span,
+    a {
+        display: block;
+    }
 }

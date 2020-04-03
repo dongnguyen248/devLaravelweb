@@ -5,10 +5,7 @@
  */
 
 require('./bootstrap');
-// require('../../node_modules/tinymce/tinymce');
-// require('../../node_modules/tinymce/jquery.tinymce');
-// require('../../node_modules/tinymce/plugins');
-// require('../../node_modules/tinymce/skins');
+require('./fontawesome')
 
 // require('../../node_modules/tinymce/themes/silver');
 
@@ -36,8 +33,3 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
-// tinymce.init({
-//     selector: 'textarea.description_quesntion',
-//     width: 900,
-//     height: 300
-// });

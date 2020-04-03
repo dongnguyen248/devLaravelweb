@@ -28,11 +28,11 @@
               <p class="lead">
                 Asked by <a href="{{$question->user->url}}"> {{$question->user->name}}</a>
                 <small class="text-muted"> {{ $question->created_date }}</small>
-                <i class="fa fa-comment-o status {{ $question->status }}"> </i> <strong> {{ $question->answers_count }}
+                <i class="fas fa-comment status {{ $question->status }}"> </i> <strong> {{ $question->answers_count }}
                 </strong>
-                <i class="fa fa-star vote status {{ $question->vote }}" aria-hidden="true"></i> <strong>
+                <i class="fas fa-star vote status {{ $question->vote }}"></i> <strong>
                   {{ $question->votes }}</strong>
-                <i class="fa fa-eye view"> </i> {{ $question->views }}
+                <i class="fas fa-eye view"> </i> {{ $question->views }}
               </p>
               <p>{{ str_limit($question->body,250) }}</p>
             </div>

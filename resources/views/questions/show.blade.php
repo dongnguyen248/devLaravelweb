@@ -8,20 +8,33 @@
   <div class="row justify-content-center">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header">
-          <div class="d-flex align-items-center">
-            <h2>Question Detail</h2>
-            <div class="ml-auto">
-              <a href="{{Route('allquestion')}}" class="btn btn-outline-primary">Back All Question</a>
+        <div class="card-body">
+          <div class="card-title">
+            <div class="d-flex align-items-center">
+              <h2>{{ $question->title }}</h2>
+              <div class="ml-auto">
+                <a href="{{Route('allquestion')}}" class="btn btn-outline-primary">Back All Question</a>
+              </div>
             </div>
           </div>
-        </div>
+          <hr>
 
-        <div class="card-body">
           <div class="media">
+            <div class="d-flex flex-column vote-controls">
+              <a title="This question is usefull" class="vote-up">
+                <i class="fas fa-caret-up fa-3x"></i>
+              </a>
+              <span class="vote-count">121</span>
+              <a title="This question is not usefull" class="vote-down off">
+                <i class="fas fa-caret-down fa-3x"></i>
+              </a>
+              <a title="Click to add mark favorite question (Click again undo)" class="favorite">
+                <i class="fas fa-star fa-2x"></i>
+                <span class="favorite-count">1211</span>
+              </a>
+            </div>
             <div class="media-body">
               <div class="d-flex align-items-center">
-                <h3 class="mt-0"> {{ $question->title }}</h3>
                 <div class="ml-auto">
                   <!-- update-question and delete-question are rules we set in AtuhServiceProvider -->
                   @if(Auth::user()->can('update-question',$question))

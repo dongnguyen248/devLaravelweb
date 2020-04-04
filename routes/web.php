@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
+
+Route::resource('questions.answers', 'AnswersController')->except('index', 'show', 'create');
+
 Route::group(
     ['prefix' => '/questions'],
     function () {
@@ -29,8 +32,6 @@ Route::group(
         Route::post('/store', 'QuestionController@store')->name('storequestion');
         Route::get('/edit/{id}', 'QuestionController@edit')->name('editQuestion');
         Route::put('/{id}', 'QuestionController@update')->name('updateQuestion');
-        Route::delete('/{id}','QuestionController@destroy')->name('delQuestion');
-
+        Route::delete('/{id}', 'QuestionController@destroy')->name('delQuestion');
     }
-
 );

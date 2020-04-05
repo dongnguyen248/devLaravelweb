@@ -54,5 +54,10 @@ class Question extends Model
         }
         return 'unvote';
     }
+    public function AcceptBestAnswer(Answer $answer)
+    {
+        $this->best_answer_id = $answer->id;
+        $this->save();
+    }
 
 }

@@ -21,6 +21,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::resource('questions.answers', 'AnswersController')->except('index', 'show', 'create');
+Route::post('answers/{answer}/accept', 'AcceptController')->name('answers.bestanswer');
 
 Route::group(
     ['prefix' => '/questions'],

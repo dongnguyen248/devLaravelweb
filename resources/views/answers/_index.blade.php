@@ -33,6 +33,7 @@
                   @if(Auth::user()->can('update',$answer))
                   <a href="{{Route('questions.answers.edit',[$question->id,$answer->id])}}"
                     class="btn btn-sm btn-outline-info">Edit</a>
+                  @else(cannot('update',$answer))
                   @endif
                   @if(Auth::user()->can('delete',$answer))
                   <form class="formdelete" action="{{Route('questions.answers.destroy',[$question->id,$answer->id])}}"
@@ -43,6 +44,7 @@
                       class="btn btn-outline-danger btn-sm">Delete</button>
 
                   </form>
+                  @else(cannot('delete',$answer))
                   @endif
                 </div>
               </div>

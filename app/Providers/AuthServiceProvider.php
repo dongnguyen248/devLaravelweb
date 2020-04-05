@@ -27,6 +27,9 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
+        // Gate::define('create-question', function(){
+
+        // });
 
         //define policies for update and delete
         Gate::define('update-question', function ($user, $question) {

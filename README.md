@@ -13,11 +13,7 @@
 <p>npm install</p>
 
 <p>npm run dev</p>
-
-<p>php artisan migrate</p>
-
-<p>php artisan db:seed</p>
-
+<p>php artisan migrate:fresh --seed</p>
 <p>php run serve</p>
 
 

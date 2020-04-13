@@ -41,19 +41,16 @@ class Question extends Model
     {
         if ($this->answers_count > 0) {
             if ($this->best_answered_id) {
-                return "answered-accepted";
+                return "answered-accepted"; //this is scss in resource sass
             }
-            
+
             return "answered";
 
         }
 
         return "unansewered";
     }
-    public function getBodyHtmlAttribute()
-    {
-        return clean($this->bodyHTML());// clean is a function in Purifier : https://github.com/mewebstudio/Purifier
-    }
+
     public function getVoteAttribute()
     {
         // dd($this->votes);
@@ -67,12 +64,13 @@ class Question extends Model
         $this->best_answer_id = $answer->id;
         $this->save();
     }
-    public function favorites(){
-        return $this->belongsToMany(User::class,'favorites')->withTimestamps();
+    public function favorites()
+    {
+        return $this->belongsToMany(User::class, 'favorites')->withTimestamps();
     }
     public function isFavorited()
     {
-        return $this->favorites()->where('user_id',auth()->id())->count()>0;
+        return $this->favorites()->where('user_id', auth()->id())->count() > 0;
     }
     public function getisFavoritedAttribute()
     {
@@ -83,19 +81,22 @@ class Question extends Model
     {
         return $this->favorites->count();
     }
-    
+    public function getBodyHtmlAttribute()
+    {
+        return clean(dd($this->bodyHTML())); // clean is a function in Purifier : https://github.com/mewebstudio/Purifier
+    }
+
     public function getExcerptAttribute()
     {
-        return $this->excerpt(300);
+        return clean($this->excerpt(300));
     }
     private function excerpt($length)
     {
-        return str_limit(strip_tags($this->bodyHTML()),$length);
+        return str_limit(strip_tags($this->bodyHTML()), $length);
     }
     private function bodyHTML()
     {
-        return clean(Parsedown::instance()->text($this->body));
+        return Parsedown::instance()->text($this->body);
     }
-   
 
 }

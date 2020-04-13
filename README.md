@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## install 
+## install
 
 <p>edit config database in .env file</p>
 <p>npm install</p>
@@ -15,8 +15,7 @@
 <p>npm run dev</p>
 <p>composer update </p>
 <p>php artisan migrate:fresh --seed</p>
-<p>php run serve</p>
-
+<p>php serve</p>
 
 ## License
 

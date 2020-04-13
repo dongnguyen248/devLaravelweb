@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Parsedown;
 
-
 class Answer extends Model
 {
     //
@@ -40,7 +39,7 @@ class Answer extends Model
     //creat https://laravel.com/docs/7.x/eloquent-mutators in laravel
     public function getBodyHtmlAttribute()
     {
-        return $this->bodyHTML();
+        return clean($this->bodyHTML());
     }
     public function getCreatedDateAttribute()
     {
@@ -52,12 +51,8 @@ class Answer extends Model
     }
     private function bodyHTML()
     {
-        
+
         return Parsedown::instance()->text($this->body); // using https://github.com/erusev/parsedown
     }
-   
-   
-   
-
 
 }

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
+// php artisan route:list --name=name route want to search
 
 Route::get('/', function () {
     return view('questions.index');
@@ -22,7 +23,7 @@ Auth::routes();
 
 Route::resource('questions.answers', 'AnswersController')->except('index', 'show', 'create');
 Route::post('answers/{answer}/accept', 'AcceptController')->name('answers.bestanswer');
-Route::post('answers/{answer}/vote','VotesAnswerController');
+Route::post('answers/{answer}/vote', 'VotesAnswerController');
 
 Route::group(
     ['prefix' => '/questions'],
@@ -35,8 +36,8 @@ Route::group(
         Route::get('/edit/{id}', 'QuestionController@edit')->name('editQuestion');
         Route::put('/{id}', 'QuestionController@update')->name('updateQuestion');
         Route::delete('/{id}', 'QuestionController@destroy')->name('delQuestion');
-        Route::post('/{question}/favorites','FavoritesController@store')->name('favoritequestion');
-        Route::delete('/{question}/favorites','FavoritesController@destroy')->name('unfavoritequestion');
-        Route::post('/{question}/vote','VoteQuestionController');
+        Route::post('/{question}/favorites', 'FavoritesController@store')->name('favoritequestion');
+        Route::delete('/{question}/favorites', 'FavoritesController@destroy')->name('unfavoritequestion');
+        Route::post('/{question}/vote', 'VoteQuestionController');
     }
 );

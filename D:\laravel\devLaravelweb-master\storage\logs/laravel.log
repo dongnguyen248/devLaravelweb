@@ -1,0 +1,182 @@
+[2020-04-13 13:32:41] local.ERROR: Command "make:migrate" is not defined.
+
+Did you mean one of these?
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:export
+    make:factory
+    make:import
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make:migrate\" is not defined.
+
+Did you mean one of these?
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:export
+    make:factory
+    make:import
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test at /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php:644)
+[stacktrace]
+#0 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(228): Symfony\\Component\\Console\\Application->find('make:migrate')
+#1 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/dn9/Documents/laravelproject/devweb_qa local/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2020-04-13 13:33:01] local.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) (SQL: select * from information_schema.tables where table_schema = dpecitlb_dong and table_name = migrations and table_type = 'BASE TABLE') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) (SQL: select * from information_schema.tables where table_schema = dpecitlb_dong and table_name = migrations and table_type = 'BASE TABLE') at /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php:670)
+[stacktrace]
+#0 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(630): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(339): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#2 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#3 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#4 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(608): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(93): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(64): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(541): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#8 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(81): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#9 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#10 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#11 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#13 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#14 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/Container.php(592): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#15 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#16 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#17 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#18 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(912): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(264): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /home/dn9/Documents/laravelproject/devweb_qa local/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 {main}
+
+[previous exception] [object] (Doctrine\\DBAL\\Driver\\PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) at /home/dn9/Documents/laravelproject/devweb_qa local/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:31)
+[stacktrace]
+#0 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): Doctrine\\DBAL\\Driver\\PDOConnection->__construct('mysql:host=127....', 'root', '', Array)
+#1 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(925): call_user_func(Object(Closure))
+#6 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(960): Illuminate\\Database\\Connection->getPdo()
+#7 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(405): Illuminate\\Database\\Connection->getReadPdo()
+#8 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(331): Illuminate\\Database\\Connection->getPdoForSelect(true)
+#9 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select * from i...', Array)
+#10 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(630): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(339): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#13 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#14 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(608): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#15 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(93): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#16 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(64): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#17 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(541): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#18 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(81): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#19 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#20 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#21 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#22 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#23 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#24 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/Container.php(592): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#25 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#26 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#27 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#28 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(912): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(264): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /home/dn9/Documents/laravelproject/devweb_qa local/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 {main}
+
+[previous exception] [object] (PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) at /home/dn9/Documents/laravelproject/devweb_qa local/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:27)
+[stacktrace]
+#0 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(27): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): Doctrine\\DBAL\\Driver\\PDOConnection->__construct('mysql:host=127....', 'root', '', Array)
+#2 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#3 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#4 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#5 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#6 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(925): call_user_func(Object(Closure))
+#7 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(960): Illuminate\\Database\\Connection->getPdo()
+#8 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(405): Illuminate\\Database\\Connection->getReadPdo()
+#9 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(331): Illuminate\\Database\\Connection->getPdoForSelect(true)
+#10 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select * from i...', Array)
+#11 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(630): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#12 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Connection.php(339): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#13 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#14 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#15 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(608): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#16 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(93): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#17 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(64): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#18 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(541): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#19 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(81): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#20 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#21 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(32): call_user_func_array(Array, Array)
+#22 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#23 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#24 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#25 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Container/Container.php(592): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#26 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#27 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#28 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#29 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(912): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(264): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 /home/dn9/Documents/laravelproject/devweb_qa local/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#35 {main}
+"} 
+[2020-04-13 13:38:09] local.ERROR: There are no commands defined in the "cofing" namespace.
+
+Did you mean this?
+    config {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"cofing\" namespace.
+
+Did you mean this?
+    config at /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php:574)
+[stacktrace]
+#0 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(625): Symfony\\Component\\Console\\Application->findNamespace('cofing')
+#1 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(228): Symfony\\Component\\Console\\Application->find('cofing:cache')
+#2 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/symfony/console/Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/dn9/Documents/laravelproject/devweb_qa local/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /home/dn9/Documents/laravelproject/devweb_qa local/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 

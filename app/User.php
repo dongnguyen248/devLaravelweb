@@ -2,9 +2,9 @@
 
 namespace App;
 
+use App\Question;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Question;
 
 class User extends Authenticatable
 {
@@ -56,54 +56,50 @@ class User extends Authenticatable
         return "https://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?s=" . $size;
 
     }
-    public function favorites(){
-        
-        return $this->belongsToMany(Question::class,'favorites')->withTimestamps();
+    public function favorites()
+    {
+
+        return $this->belongsToMany(Question::class, 'favorites')->withTimestamps();
     }
     public function voteQuestions()
     {
-        return $this->morphedByMany(Question::class,'votable');
-        
+        return $this->morphedByMany(Question::class, 'votable');
+
     }
     public function voteAnswers()
     {
-        return $this->morphedByMany(Answer::class,'votable');
+        return $this->morphedByMany(Answer::class, 'votable');
     }
     public function voteQuestion(Question $question, $vote)
     {
         $voteQuestions = $this->voteQuestions();
         //  dd($voteQuestions->where('votable_id',$question->id)->exists());
-       $this->_vote($voteQuestions, $question, $vote);
+        $this->_vote($voteQuestions, $question, $vote);
 
     }
     public function voteAnser(Answer $answer, $vote)
     {
         $voteAnswers = $this->voteAnswers();
         // dd($answer->votes_count);
-       $this->_vote($voteAnswers, $answer, $vote);
-        
-        
+        $this->_vote($voteAnswers, $answer, $vote);
+
     }
     private function _vote($relationship, $model, $vote)
     {
-        if($relationship->where('votable_id', $model->id)->exists())
-        {
-            $relationship->updateExistingPivot($model,['vote'=>$vote]);
-        }
-        else{
+        if ($relationship->where('votable_id', $model->id)->exists()) {
+            $relationship->updateExistingPivot($model, ['vote' => $vote]);
+        } else {
             // dd($voteQuestions->attach($question,['vote'=>$vote]));
-            $relationship->attach($model,['vote'=>$vote]);
+            $relationship->attach($model, ['vote' => $vote]);
         }
-        // dd('aa');
-        $model->load('votes');
+        // dd($vote);
+        ($model->load('votes'));
         $downVotes = (int) $model->downVotes()->sum('vote');
         $upVotes = (int) $model->upVotes()->sum('vote');
         $votes_count = $model->votes_count;
         $model->votes_count = $downVotes + $upVotes + $votes_count;
         $model->save();
-        
-    }
-    
 
+    }
 
 }

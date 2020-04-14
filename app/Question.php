@@ -12,10 +12,12 @@ class Question extends Model
     use VotableTrait;
 
     protected $fillable = ['title', 'body'];
+    //relationship question and user
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+    //relationship question and answers
     public function answers()
     {
         return $this->hasMany(Answer::class)->orderBy('votes_count', 'DESC');
@@ -64,6 +66,8 @@ class Question extends Model
         $this->best_answer_id = $answer->id;
         $this->save();
     }
+
+    // add adn undo favorite question
     public function favorites()
     {
         return $this->belongsToMany(User::class, 'favorites')->withTimestamps();
@@ -81,6 +85,8 @@ class Question extends Model
     {
         return $this->favorites->count();
     }
+
+    // show body question
     public function getBodyHtmlAttribute()
     {
         return clean(dd($this->bodyHtml())); // clean is a function in Purifier : https://github.com/mewebstudio/Purifier

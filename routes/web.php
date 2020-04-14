@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
-// php artisan route:list --name=name route want to search
+// php artisan route:list --name=nameroute
 
 Route::get('/', function () {
     return view('questions.index');

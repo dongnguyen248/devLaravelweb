@@ -18,7 +18,7 @@ class Question extends Model
     }
     public function answers()
     {
-        return $this->hasMany(Answer::class);
+        return $this->hasMany(Answer::class)->orderBy('votes_count', 'DESC');
     }
     //using title for slug create link. we need to set name attribute same name in blade
     public function setTitleAttribute($value)
@@ -83,20 +83,20 @@ class Question extends Model
     }
     public function getBodyHtmlAttribute()
     {
-        return clean(dd($this->bodyHTML())); // clean is a function in Purifier : https://github.com/mewebstudio/Purifier
+        return clean(dd($this->bodyHtml())); // clean is a function in Purifier : https://github.com/mewebstudio/Purifier
     }
 
     public function getExcerptAttribute()
     {
-        return clean($this->excerpt(300));
+        return clean($this->excerpt(300)); //default is 300 letter
     }
-    private function excerpt($length)
+    public function excerpt($length)
     {
-        return str_limit(strip_tags($this->bodyHTML()), $length);
+        return str_limit(strip_tags($this->bodyHtml()), $length);
     }
-    private function bodyHTML()
+    private function bodyHtml()
     {
-        return Parsedown::instance()->text($this->body);
+        return clean(Parsedown::instance()->text($this->body)); // using https://github.com/erusev/parsedown
     }
 
 }

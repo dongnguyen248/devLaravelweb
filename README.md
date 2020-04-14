@@ -15,7 +15,7 @@
 <p>npm run dev</p>
 <p>composer update </p>
 <p>php artisan migrate:fresh --seed</p>
-<p>php serve</p>
+<p>php artisan serve</p>
 
 ## License
 

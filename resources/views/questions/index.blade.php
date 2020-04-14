@@ -19,7 +19,7 @@
 
         <div class="card-body">
           @include('layouts._message')
-          @foreach($questions as $question)
+          @forelse($questions as $question)
           <div class="media">
             <div class="media-body">
               <div class="d-flex align-items-center">
@@ -34,11 +34,15 @@
                   {{ $question->favorites_count }}</strong>
                 <i class="fas fa-eye view"> </i> {{ $question->views }}
               </p>
-              <div class="excerpt">{{ $question->excerpt }}</div>
+              <div class="excerpt">{{ $question->excerpt(400) }}</div>
             </div>
           </div>
           <hr>
-          @endforeach
+          @empty
+          <dv class="alert alert-warning">
+            <strong>Sorry</strong> There are no question available.
+          </dv>
+          @endforelse
           <div class="mx-auto">
             {{$questions->links()}}
           </div>

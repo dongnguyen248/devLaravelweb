@@ -47,19 +47,11 @@
               <div class="content">
                 <p>{{ $question->body}}</p>
                 <div class="float-right">
-                  @include('shared._authord',[
+                  <!-- @include('shared._authord',[
                   'model'=>$question,
                   'label'=>'Asked'
-                  ])
-                  {{-- <span class="text-muted">Asked {{$question->created_date}}</span>
-                  <div class="media mt-2">
-                    <a href="{{$question->user->url}}" class="pr-2">
-                      <img src="{{$question->user->avatar}}" alt="avatar user">
-                    </a>
-                    <div class="media-body mt-1">
-                      <a href="{{$question->user->url}}">{{$question->user->name}}</a>
-                    </div> --}}
-                  </div>
+                  ]) -->
+                  <user-info :model="{{$question}}" label="Asked by"></user-info>
                 </div>
               </div>
             </div>
@@ -68,10 +60,11 @@
       </div>
     </div>
   </div>
-  @include('answers._index',[
-  'answers'=>$question->answers, // get all answer in a question sent to _index answer
-  'answersCount'=>$question->answers_count //number answers a question.
-  ])
-  @include('answers._create')
+</div>
+@include('answers._index',[
+'answers'=>$question->answers, // get all answer in a question sent to _index answer
+'answersCount'=>$question->answers_count //number answers a question.
+])
+@include('answers._create')
 </div>
 @endsection

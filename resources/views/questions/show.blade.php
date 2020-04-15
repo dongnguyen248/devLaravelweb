@@ -20,13 +20,14 @@
           <hr>
 
           <div class="media">
-           @include('shared._vote',[
-             'model'=>$question //add model is $question send to _vote
-           ])
+            @include('shared._vote',[
+            'model'=>$question //add model is $question send to _vote
+            ])
             <div class="media-body">
               <div class="d-flex align-items-center">
                 <div class="ml-auto">
                   <!-- update-question and delete-question are rules we set in AtuhServiceProvider -->
+                  @if(!Auth::guest())
                   @if(Auth::user()->can('update-question',$question))
                   <a href="{{Route('editQuestion',$question->id)}}" class="btn btn-sm btn-outline-info">Edit</a>
                   @endif
@@ -39,6 +40,7 @@
 
                   </form>
                   @endif
+                  @endif
                 </div>
 
               </div>
@@ -46,8 +48,8 @@
                 <p>{{ $question->body}}</p>
                 <div class="float-right">
                   @include('shared._authord',[
-                    'model'=>$question,
-                    'label'=>'Asked'
+                  'model'=>$question,
+                  'label'=>'Asked'
                   ])
                   {{-- <span class="text-muted">Asked {{$question->created_date}}</span>
                   <div class="media mt-2">

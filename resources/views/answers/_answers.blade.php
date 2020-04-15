@@ -8,6 +8,7 @@
       <div class="col-4">
         <div class="ml-auto">
           <!-- update-answer and delete-answer are rules we set in AtuhServiceProvider -->
+          @if(!Auth:guest())
           @if(Auth::user()->can('update',$answer))
           <a href="{{Route('questions.answers.edit',[$question->id,$answer->id])}}"
             class="btn btn-sm btn-outline-info">Edit</a>
@@ -22,6 +23,7 @@
               class="btn btn-outline-danger btn-sm">Delete</button>
 
           </form>
+          @endif
           @endif
         </div>
       </div>

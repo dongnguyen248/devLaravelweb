@@ -12,7 +12,8 @@
           <div class="d-flex align-items-center">
             <h2>All Question</h2>
             <div class="ml-auto">
-              <a href="{{Route('showform')}}" class="btn btn-outline-primary">Ask Question</a>
+              <a href="{{Auth::guest() ? Route('login') :Route('showform')}}" class="btn btn-outline-primary ">Ask
+                Question</a>
             </div>
           </div>
         </div>

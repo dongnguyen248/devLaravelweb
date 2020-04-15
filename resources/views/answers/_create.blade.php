@@ -1,3 +1,10 @@
+@if(Auth::guest())
+<div class="container mt-4">
+  <p>Please <strong><a href="{{Route('login')}}">Login </a></strong>to answer question</p>
+  <p>If you don't have account please <strong><a href="{{Route('register')}}"> Register</a></strong></p>
+</div>
+@endif
+@if(!Auth::guest())
 <div class="container mt-4">
   <div class="card">
     <div class="card-body">
@@ -23,3 +30,4 @@
     </div>
   </div>
 </div>
+@endif

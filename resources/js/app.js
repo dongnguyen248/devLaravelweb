@@ -7,9 +7,12 @@
 require("./bootstrap");
 require("./fontawesome");
 
-// require('../../node_modules/tinymce/themes/silver');
-
 window.Vue = require("vue");
+//https://github.com/arthurvasconcelos/vue-izitoast
+import VueIziToast from 'vue-izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+Vue.use(VueIziToast);
+
 // var tinymce = require('tinymce');
 /**
  * The following block of code may be used to automatically register your

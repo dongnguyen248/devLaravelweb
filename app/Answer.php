@@ -10,7 +10,7 @@ class Answer extends Model
     //
     use VotableTrait;
     protected $fillable = ['body', 'user_id'];
-    protected $appends = ['created_date'];
+    protected $appends = ['created_date', 'body_html'];
 
     public function question()
     {
@@ -40,7 +40,7 @@ class Answer extends Model
     //creat https://laravel.com/docs/7.x/eloquent-mutators in laravel
     public function getBodyHtmlAttribute()
     {
-        return clean($this->bodyHTML());
+        return clean($this->bodyHtml());
     }
     public function getCreatedDateAttribute()
     {
@@ -50,7 +50,7 @@ class Answer extends Model
     {
         return $this->id === $this->question->best_answer_id ? 'vote-accepted' : '';
     }
-    private function bodyHTML()
+    private function bodyHtml()
     {
 
         return Parsedown::instance()->text($this->body); // using https://github.com/erusev/parsedown

@@ -12,7 +12,7 @@ class Question extends Model
     use VotableTrait;
 
     protected $fillable = ['title', 'body'];
-    protected $appends = ['created_date']; // This is attribute we are declare below
+    protected $appends = ['created_date', 'is_favorited', 'favorites_count']; // This is attribute we are declare below
 
     //relationship question and user
     public function user()

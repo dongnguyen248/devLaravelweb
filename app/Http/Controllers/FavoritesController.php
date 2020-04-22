@@ -10,17 +10,27 @@ class FavoritesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')   ;
+        $this->middleware('auth');
     }
     public function store(Question $question)
     {
         $question->favorites()->attach(auth()->id());
+        if (request()->expectsJson()) {
+            return response()->json([
+                'message' => 'Thanks',
+            ]);
+        }
         return back();
 
     }
     public function destroy(Question $question)
     {
         $question->favorites()->detach(auth()->id());
+        if (request()->expectsJson()) {
+            return response()->json([
+                'message' => 'Opp',
+            ]);
+        }
         return back();
     }
 }
